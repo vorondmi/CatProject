@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CatProject.Models.Cat>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Color</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.names</td>
+            <td>@item.ages</td>
+            <td>@item.color</td>
+            <td>@Html.ActionLink("Details", "Details", new { id = item.id })</td>
+            <td>@Html.ActionLink("Update", "Update", new { id = item.id })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = item.id })</td>
+        </tr>
+    }
+    <tr>
+        <td>@Html.ActionLink("Create cat", "Create")</td>
+    </tr>
+</table>

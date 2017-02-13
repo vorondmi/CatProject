@@ -1,0 +1,9 @@
+﻿@model CatProject.Models.Cat
+
+<h2>@Model.names</h2> <br />
+<h2>@Model.ages</h2> <br />
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}

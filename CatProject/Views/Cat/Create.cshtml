@@ -1,0 +1,33 @@
+﻿@model CatProject.Models.Cat
+
+@using CatProject.Models
+
+@using (Html.BeginForm("Create", "Cat", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.ages) <br />
+                @Html.EditorFor(model => model.ages) <br />
+                @Html.ValidationMessageFor(model => model.ages) <br />
+            </td>
+            <td>
+                @Html.LabelFor(model => model.names) <br />
+                @Html.EditorFor(model => model.names) <br />
+                @Html.ValidationMessageFor(model => model.names) <br />
+            </td>
+            <td>
+                @Html.LabelFor(model => model.color) <br />
+                @Html.DropDownListFor(model => model.color, new SelectList(Enum.GetValues(typeof(Color)))) <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Create" />
+            </td>
+            <td>
+                @Html.ActionLink("Back to list", "Index")
+            </td>
+        </tr>
+    </table>
+}
